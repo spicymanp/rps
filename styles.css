@@ -7,6 +7,10 @@
 
 body {
     background-color: var(--bgColour);
+    position: relative;
+    overflow:hidden;
+    width: 90%;
+    height: 90%;
 }
 
 .container {
@@ -15,17 +19,16 @@ body {
     left: 50%;
     display: flex;
     flex-direction: column;
-    column-count: 2;
     justify-content: center;
     
 }
 
 .playerBox {
+    position: absolute;
     border-radius: 25px;
-    border: 2px solid #73AD21;
-    padding: 20px;
-    width: 200px;
-    height: 150px; 
+    border: 2px solid var(--secColour);
+    background-color: var(--priColour);
+    padding: 10px;
     width: 300px;
     height: 100px;
 }
