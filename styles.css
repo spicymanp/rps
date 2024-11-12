@@ -10,12 +10,14 @@ body {
 }
 
 .container {
-    display: inline-block;
+    display: flexbox;
+    justify-content: center;
 }
 
 .playerBox {
     border-radius: 10px;
     border-color: var(--secColour);
+    border-width: 2px;
     background-color: var(--priColour);
     width: 300px;
     height: 100px;
