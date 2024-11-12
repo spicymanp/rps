@@ -8,3 +8,13 @@
 body {
     background-color: var(--bgColour);
 }
+
+h1 {
+    font-size: 20px;
+    color: var(--secColour);
+}
+
+p {
+    font-size: 12px;
+    color: var(--forColour);
+}
