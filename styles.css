@@ -11,12 +11,14 @@ body {
 
 .container {
     display: flex;
+    flex-direction: column;
+    column-count: 2;
     justify-content: center;
 }
 
 .playerBox {
     border-radius: 10px;    
-    border: 5px, solid, var(--forColour);
+    border: 5px, solid, #EEEEEE;
     background-color: var(--priColour);
     width: 300px;
     height: 100px;
