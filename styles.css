@@ -9,6 +9,18 @@ body {
     background-color: var(--bgColour);
 }
 
+.container {
+    display: inline-block;
+}
+
+.playerBox {
+    border-radius: 10px;
+    border-color: var(--secColour);
+    background-color: var(--priColour);
+    width: 300px;
+    height: 100px;
+}
+
 h1 {
     font-size: 20px;
     color: var(--secColour);
