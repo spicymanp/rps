@@ -1,0 +1,10 @@
+:root {
+    --bgColour: #222831;
+    --forColour: #EEEEEE;
+    --priColour: #31363F;
+    --secColour: #76ABAE;
+}
+
+body {
+    background-color: var(--bgColour);
+}
