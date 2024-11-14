@@ -1,0 +1,15 @@
+{
+    "name": "rps",
+    "version": "1.0.0",
+    "description": "a simple rock, paper, scissors game to see if I can win at learning js. /s",
+    "main": "index.js",
+    "scripts": {
+        "build-css": "tailwindcss build src/styles.css -o public/styles.css"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "tailwindcss": "^3.4.15"
+    }
+}
