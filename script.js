@@ -5,6 +5,7 @@ console.log("JavaScript file has been loaded! Yipee!"); // just so I know this i
 const playerName = ducment.getElementById("player-name");
 const dropdown = document.getElementById("player-selection-dropdown")
 const displayPlayerSelection = document.getElementById("current-selection");
+const aButton = document.getElementById('my-button');
 // rest of my code 
 
 
@@ -20,6 +21,10 @@ dropdown.addEventListener('change', function() {
     changeStuff();
 })
 
+aButton.addEventListener('click', (e) => {
+    console.log('the button was clicked');
+    changeStuff();
+})
 
 // functions and functionality needed 
 // set player name
