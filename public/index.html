@@ -6,40 +6,57 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge" />
         <title>rps game</title>
 
-        <link rel="stylesheet" href="./styles.css" />
+        <link rel="stylesheet" href="/src/styles.css" />
         <!-- You can add other meta tags, such as description or keywords, here -->
     </head>
     <body>
         <header>
             <!-- Header content, like navigation links, logos, etc. -->
-        </header>
+            <div id="navBox" class="nav-container">
+                <nav>
+                    <div>
+                        <h1>RPS</h1>
+                        <h2>a rock, paper, scissors game</h2>
+                    </div>
+                </nav>
+            </div>
+        </header>       
+        <main>
+            <div class="game-container">
+                <div id="player-1" class="player">
+                    <span id="player-name">Player 1</span>
+                    <div>
+                        <select id="player-selection-dropdown">
+                            <option value="none" selected disabled hidden>Select an Option</option>       
+                            <option value="rock">Rock</option>
+                            <option value="paper">Paper</option>
+                            <option value="scissors">Scissors</option>
+                        </select>                        
+                    </div>
+                    <h1 id="current-selection">not poop</h1>
+                </div>
 
-        <div>
-            <div id="titleBox" class="container"></div>
-            <nav>
-                <div>
-                    <h1>rps game</h1>
-                </div>
-            </nav>
-        </div>
-            <div id="gameBox" class="container">
-                
-                <div id="playerSelection" >Player 1</div>
-                <div id="opponentSelection" >Player 2</div>
-                <div id="playerScore" class="scoreBox"></div>
-                <div id="opponentScore" class="scoreBox"></div>
-                <div id="rulesBox" class="container">
-                    <p>"There will be some rules here."</p>
-                </div>
+                <div id="player-2" class="player">
+                    <span id="player2">Player 2</span>
+                    <div><!--- placeholder!---> </div>
+                </div>                    
+                <span id="game-score">Score : </span>                      
             </div>
         </main>
 
         <footer>
             <!-- Footer content, like copyright, contact info, etc. -->
             <div id="disclaimer" class="footer">
-                "rps is a rock, paper, scissors project by paulo toureiro which has been designed for you to have fun at my (learning) expense.
+                "rps is a rock, paper, scissors project by paulo toureiro which has been designed for you to have fun at his (learning) expense.
             </div>
         </footer>
+
+        
+
+
+  
+  
+  
 
         <!-- Link to external JS files -->
         <script src="script.js"></script>
