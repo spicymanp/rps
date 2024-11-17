@@ -1,41 +1,94 @@
 :root {
     --bgColour: #222831;
-    --forColour: #EEEEEE;
-    --priColour: #31363F;
-    --secColour: #76ABAE;
+    --forColour: #eeeeee;
+    --priColour: #31363f;
+    --secColour: #76abae;
 }
 
-body {
+body {    
     background-color: var(--bgColour);
-    position: relative;
-    overflow:hidden;
-    width: 90%;
-    height: 90%;
+    overflow: scroll;
+    overflow-x: hidden;    
+    padding: 0;
+    margin: 30px;
 }
 
-.container {
-    position: absolute;
-    top: 50%;
-    left: 50%;
+main {
     display: flex;
-    flex-direction: column;
     justify-content: center;
-    
+    align-items: center;
 }
 
-.playerBox {
+footer {
     position: absolute;
-    border-radius: 25px;
-    border: 2px solid var(--secColour);
+    display: flex;
+    align-items: end;
+    justify-content: center;    
+    bottom: 20px;
+    color:  var(--forColour);
+    width: 99%;
+}
+
+.nav-container {
+    text-align: center;
+    margin: auto;
+}
+
+.game-container {
+    display: flex;
+    align-items:start;
+    flex-direction: row;
+    flex-wrap: wrap;        
+    justify-content: space-between;
+    text-align: center;
+    padding-top: 25px;
+    padding-left: 15px;
+    padding-right: 15px;
+    border: 12px solid var(--secColour);
     background-color: var(--priColour);
-    padding: 10px;
-    width: 300px;
-    height: 100px;
+    border-radius: 25px;    
+    min-height: 350px;
+    min-width: 400px;    
+    width: 900px;    
+}
+
+.player {   
+    font-weight: bold;
+    text-align: center;
+    height: 125px;
+    border: 2px solid var(--secColour);
+    border-radius: 20px;
+    padding: 10px;    
+}
+
+#player-1 { 
+    align-items: self-start;
+    width: calc(45% - 45px);    
+    color: var(--forColour);    
+}
+
+#player-2 {        
+    width: calc(45% - 45px);
+    color: var(--forColour);
+}
+
+#game-score {
+    width: 33%;
+    color: var(--forColour);
 }
 
 h1 {
-    font-size: 20px;
+    font-size: 30px;
+    font-weight: bold;
+    letter-spacing: 7px;    
     color: var(--secColour);
+}
+
+h2 {
+    margin-top: -28px;
+    font-size: 14px;
+    text-transform: uppercase;
+    color: var(--forColour);
 }
 
 p {
