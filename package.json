@@ -9,7 +9,7 @@
     "keywords": [],
     "author": "",
     "license": "ISC",
-    "dependencies": {
-        "tailwindcss": "^3.4.15"
+    "devDependencies": {
+        "eslint-config-prettier": "^9.1.0"
     }
 }
