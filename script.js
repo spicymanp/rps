@@ -1,4 +1,4 @@
-console.log("JavaScript file has been loaded!"); // just so I know this is even loading...
+console.log("JavaScript file has been loaded! Yipee!"); // just so I know this is even loading...
 
 
 // connect to html elements here 
@@ -8,10 +8,11 @@ const displayPlayerSelection = document.getElementById("current-selection");
 // rest of my code 
 
 
-const changeStuff = () => {
+function changeStuff() {
     const selectedMove = dropdown.options[dropdown.selectedIndex].text;
     console.log(selectedMove);
     displayPlayerSelection.textContent = selectedMove;
+    console.log('something is happening');
 }
 
 dropdown.addEventListener('change', function() {
