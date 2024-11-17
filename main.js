@@ -1,3 +1,6 @@
+console.log("JavaScript file has been loaded!"); // just so I know this is even loading...
+
+
 // connect to html elements here 
 const playerName = ducment.getElementById("player-name");
 const dropdown = document.getElementById("player-selection-dropdown")
