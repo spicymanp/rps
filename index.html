@@ -27,7 +27,9 @@
                     <span id="player-name">Player 1</span>
                     <div>
                         <select id="player-selection-dropdown">
-                            <!-- is taking care of this -->>
+                            <!-- ensureing this is teh first and default value -->
+                            <option value="0" selected disabled hidden>Select an Option!</option>
+                            <!-- js is taking care of the rest of this -->>
                         </select>
                     </div>
                     <h1 id="player1-current-selection">nothing</h1>
@@ -55,7 +57,7 @@
         <footer>
             <!-- Footer content, like copyright, contact info, etc. -->
             <div id="disclaimer" class="footer">
-                "rps is a rock, paper, scissors project by paulo toureiro which has been designed for you to have fun at his (learning) expense.
+                rps is a rock, paper, scissors project by paulo toureiro which has been designed for you to have fun at his expense.
             </div>
         </footer>
         <!-- Link to external JS files -->

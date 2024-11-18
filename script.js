@@ -87,13 +87,14 @@ function populateDropdown() {
 
 function setPlayer1Selection() {
     const selectedMove = dropdown.options[dropdown.selectedIndex].text;
-    if (selectedMove === 'Select an Option') {
+    if (selectedMove === 'Select an option!') {
         alert('Please select your next move.');
         return false;
+    } else {
+        player1Choice = selectedMove;
+        player1Selection.textContent = player1Choice;
+        return true;
     }
-    player1Choice = selectedMove;
-    player1Selection.textContent = player1Choice;
-    return true;
 }
 
 function getPlayer2Selection() {
@@ -107,10 +108,18 @@ function setPlayer2selection() {
 }
 
 function checkResults(player1Choice, player2Choice) {
-    if (player1Choice === player2Choice) {
+    const player1Move = rps[player1Choice];
+    const player2Move = rps[player2Choice];
+
+    if (player1Move === player2Move) {
         drawCount++;
         draws.textContent = 'Draws: ' + drawCount;
-    }
+    } else
+        if (outcomes[player1Move].beats === player2Move) {
+            // code here
+        } else {
+            // code here
+        }
 
 }
 
@@ -119,9 +128,7 @@ function countTheRound() {
     rounds.textContent = 'Rounds: ' + roundCount;
 }
 
-function setScore() {
-    // add functionality
-}
+//const setScore = (winnerOfRound) => winnerOfRound === 'player1' ? player1Score++ : player2Score++;
 
 function electVictor() {
     // add functionality
@@ -144,6 +151,8 @@ playButton.addEventListener('click', (e) => {
     checkResults(player1Choice, player2Choice);
     countTheRound();
 })
+
+
 
 resetButton.addEventListener('click', (e) => {
     console.log('clicking the reset button');
