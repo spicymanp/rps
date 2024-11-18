@@ -5,10 +5,10 @@
     --secColour: #76abae;
 }
 
-body {    
+body {
     background-color: var(--bgColour);
     overflow: scroll;
-    overflow-x: hidden;    
+    overflow-x: hidden;
     padding: 0;
     margin: 30px;
 }
@@ -23,9 +23,9 @@ footer {
     position: absolute;
     display: flex;
     align-items: end;
-    justify-content: center;    
+    justify-content: center;
     bottom: 20px;
-    color:  var(--forColour);
+    color: var(--forColour);
     width: 99%;
 }
 
@@ -36,9 +36,9 @@ footer {
 
 .game-container {
     display: flex;
-    align-items:start;
+    align-items: start;
     flex-direction: row;
-    flex-wrap: wrap;        
+    flex-wrap: wrap;
     justify-content: space-between;
     text-align: center;
     padding-top: 25px;
@@ -46,41 +46,49 @@ footer {
     padding-right: 15px;
     border: 12px solid var(--secColour);
     background-color: var(--priColour);
-    border-radius: 25px;    
+    border-radius: 25px;
     min-height: 350px;
-    min-width: 400px;    
-    width: 900px;    
+    min-width: 400px;
+    width: 900px;
 }
 
-.player {   
+.player {
     font-weight: bold;
     text-align: center;
     height: 125px;
     border: 2px solid var(--secColour);
     border-radius: 20px;
-    padding: 10px;    
+    padding: 10px;
 }
 
-#player-1 { 
+.scores {
+    width: 15%;
+    text-align: right;
+    justify-content: left;
+    align-items: start;
+}
+
+#player-1 {
     align-items: self-start;
-    width: calc(45% - 45px);    
-    color: var(--forColour);    
-}
-
-#player-2 {        
     width: calc(45% - 45px);
     color: var(--forColour);
 }
 
-#game-score {
-    width: 33%;
+#player-2 {
+    width: calc(45% - 45px);
+    color: var(--forColour);
+}
+
+#game-score,
+#draws-score,
+#rounds {
     color: var(--forColour);
 }
 
 h1 {
     font-size: 30px;
     font-weight: bold;
-    letter-spacing: 7px;    
+    letter-spacing: 7px;
     color: var(--secColour);
 }
 

@@ -20,28 +20,32 @@
                     </div>
                 </nav>
             </div>
-        </header>       
+        </header>
         <main>
             <div class="game-container">
                 <div id="player-1" class="player">
                     <span id="player-name">Player 1</span>
                     <div>
                         <select id="player-selection-dropdown">
-                            <option value="none" selected disabled hidden>Select an Option</option>       
-                            <option value="rock">Rock</option>
-                            <option value="paper">Paper</option>
-                            <option value="scissors">Scissors</option>
-                        </select>                        
+                            <option value="0" selected disabled hidden>Select an Option</option>
+                        </select>
                     </div>
-                    <h1 id="current-selection">nothing</h1>
+                    <h1 id="player1-current-selection">nothing</h1>
                 </div>
 
                 <div id="player-2" class="player">
                     <span id="player2">Player 2</span>
-                    <div><!--- placeholder!---> </div>
-                </div>                    
-                <span id="game-score">Score : </span> 
-                <button id="my-button">desperate!</button>                     
+                    <div>
+                        <select disabled></select>
+                    </div>
+                    <h1 id="player2-current-selection">nothing</h1>
+                </div>
+                <div class="scores">
+                    <div><span id="game-score">Score: 0</span></div>
+                    <div><span id="draws-score">Draws: 0</span></div>
+                    <div><span id="rounds">Rounds: 0</span></div>
+                </div>
+                <button id="play-button">Play!</button>
             </div>
         </main>
 

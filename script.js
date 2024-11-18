@@ -1,32 +1,121 @@
-console.log("JavaScript file has been loaded! Yipee!"); // just so I know this is even loading...
+console.log('JavaScript file has been loaded! Yipee!'); // just so I know this is even loading...
 
 
 // connect to html elements here 
-const playerName = document.getElementById("player-name");
-const dropdown = document.getElementById("player-selection-dropdown")
-const displayPlayerSelection = document.getElementById("current-selection");
-const aButton = document.getElementById('my-button');
+const playerName = document.getElementById('player-name');
+const dropdown = document.getElementById('player-selection-dropdown')
+const player1Selection = document.getElementById('player1-current-selection');
+const playButton = document.getElementById('play-button');
+const player2Selection = document.getElementById('player2-current-selection')
+const score = document.getElementById('game-score');
+const draws = document.getElementById('draws-score');
+const rounds = document.getElementById('rounds');
+
 // rest of my code 
 
+// variables
 
-function changeStuff() {
-    const selectedMove = dropdown.options[dropdown.selectedIndex].text;
-    console.log(selectedMove);
-    displayPlayerSelection.textContent = selectedMove;
-    console.log('something is happening');
+let player1Score = 0;
+let player2Score = 0;
+let player1Choice = '';
+let player2Choice = '';
+let currentScore = 0;
+let drawCount = 0;
+let roundCount = 0;
+
+
+const rps = {
+    1: 'Rock',
+    2: 'Paper',
+    3: 'Scissors'
 }
 
-dropdown.addEventListener('change', function() {
-    console.log("heeeeeeeeeeeeee");
-    changeStuff();
+const outcomes = {
+    Rock: { beats: 'Scissors', losesTo: 'Paper' },
+    Paper: { beats: 'Rock', losesTo: 'Scissors' },
+    Scissors: { beats: 'Paper', losesTo: 'Rock' }
+}
+
+// functions 
+
+function populateDropdown() {
+    for (let key in rps) {
+        if (rps.hasOwnProperty(key)) {
+            let option = document.createElement('option');
+            option.value = key;
+            option.textContent = rps[key];
+            dropdown.appendChild(option);
+        }
+    }
+}
+
+function setPlayer1Selection() {
+    const selectedMove = dropdown.options[dropdown.selectedIndex].text;
+    if (selectedMove === 'Select an Option') {
+        alert('Please select your next move.');
+        return false;
+    }
+    player1Choice = selectedMove;
+    player1Selection.textContent = player1Choice;
+    return true;
+}
+
+function getPlayer2Selection() {
+    const randomNumber = Math.floor(Math.random() * 3) + 1;
+    player2Choice = rps[randomNumber];
+    return player2Choice;
+}
+
+function setPlayer2selection() {
+    player2Selection.textContent = getPlayer2Selection();
+}
+
+function checkResults(player1Choice, player2Choice) {
+    if (player1Choice === player2Choice) {
+        drawCount++;
+        draws.textContent = 'Draws: ' + drawCount;
+    }
+
+}
+
+function countTheRound() {
+    roundCount++;
+    rounds.textContent = 'Rounds: ' + roundCount;
+}
+
+function setScore() {
+
+}
+
+function electVictor() {
+
+}
+
+// events and such
+
+dropdown.addEventListener('change', function () {
+    setPlayer1Selection();
 })
 
-aButton.addEventListener('click', (e) => {
-    console.log('the button was clicked');
-    changeStuff();
+playButton.addEventListener('click', (e) => {
+    if (!setPlayer1Selection()) {
+        return;
+    }
+    setPlayer1Selection();
+    getPlayer2Selection();
+    setPlayer2selection();
+
+    checkResults(player1Choice, player2Choice);
+    countTheRound();
 })
 
-// functions and functionality needed 
+
+populateDropdown();
+
+
+
+
+// functions and functionality needed
 // set player name
 // get / set player scores (including computer player(cp)
 // game logic - random rolls for cp and comparing results between player selection and computers selection.
