@@ -6,6 +6,7 @@ const playerName = document.getElementById('player-name');
 const dropdown = document.getElementById('player-selection-dropdown')
 const player1Selection = document.getElementById('player1-current-selection');
 const playButton = document.getElementById('play-button');
+const resetButton = document.getElementById('reset-button');
 const player2Selection = document.getElementById('player2-current-selection')
 const score = document.getElementById('game-score');
 const draws = document.getElementById('draws-score');
@@ -23,7 +24,6 @@ let currentScore = 0;
 let drawCount = 0;
 let roundCount = 0;
 
-
 const rps = {
     1: 'Rock',
     2: 'Paper',
@@ -38,7 +38,42 @@ const outcomes = {
 
 // functions 
 
+function resetValues() {
+    player1Score = 0;
+    player2Score = 0;
+    player1Choice = '';
+    player2Choice = '';
+    currentScore = 0;
+    drawCount = 0;
+    roundCount = 0;
+
+    player1Selection.textContent = 'nothing';
+    player2Selection.textContent = 'nothing';
+    draws.textContent = 'Draws: 0';
+    rounds.textContent = 'Rounds: 0';
+
+    populateDropdown();
+
+}
+
+function resetDropdown() {
+
+    dropdown.innerHTML = '';
+
+    const defaultOption = document.createElement('option');
+    defaultOption.value = '0';
+    defaultOption.textContent = 'Select an option!';
+    defaultOption.disabled = true;
+    defaultOption.disabled = true;
+    defaultOption.hidden = true;
+
+    dropdown.appendChild(defaultOption);
+}
+
 function populateDropdown() {
+
+    resetDropdown();
+
     for (let key in rps) {
         if (rps.hasOwnProperty(key)) {
             let option = document.createElement('option');
@@ -47,6 +82,7 @@ function populateDropdown() {
             dropdown.appendChild(option);
         }
     }
+    dropdown.value = 0;
 }
 
 function setPlayer1Selection() {
@@ -84,14 +120,14 @@ function countTheRound() {
 }
 
 function setScore() {
-
+    // add functionality
 }
 
 function electVictor() {
-
+    // add functionality
 }
 
-// events and such
+
 
 dropdown.addEventListener('change', function () {
     setPlayer1Selection();
@@ -109,8 +145,18 @@ playButton.addEventListener('click', (e) => {
     countTheRound();
 })
 
+resetButton.addEventListener('click', (e) => {
+    console.log('clicking the reset button');
+    resetValues();
+})
+
 
 populateDropdown();
+
+
+
+
+
 
 
 
