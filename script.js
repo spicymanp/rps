@@ -107,21 +107,24 @@ function setPlayer2selection() {
     player2Selection.textContent = getPlayer2Selection();
 }
 
-function checkResults(player1Choice, player2Choice) {
-    const player1Move = rps[player1Choice];
-    const player2Move = rps[player2Choice];
+function checkResults(p1, p2) {
 
-    if (player1Move === player2Move) {
+    if (p1 === p2) {
         drawCount++;
         draws.textContent = 'Draws: ' + drawCount;
-    } else
-        if (outcomes[player1Move].beats === player2Move) {
-            // code here
-        } else {
-            // code here
-        }
-
+        console.log("it's a draw");
+        console.log('outcomes[p1].beats' + ' ' + outcomes[p1].beats);
+    }
+    else if (outcomes[p1].beats === outcomes[p2].losesTo) {
+        console.log('p1 wins the round!');
+        player1Score++;
+    } else {
+        console.log('p2 wins the round!');
+        player2Score++;
+    }
+    return score.textContent = `Score : ${player1Score} | ${player2Score}`;
 }
+
 
 function countTheRound() {
     roundCount++;
@@ -147,6 +150,9 @@ playButton.addEventListener('click', (e) => {
     setPlayer1Selection();
     getPlayer2Selection();
     setPlayer2selection();
+
+    console.log('p1 : ' + player1Choice + ' : ' + typeof (player1Choice));
+    console.log('p2 : ' + player2Choice + ' : ' + typeof (player2Choice));
 
     checkResults(player1Choice, player2Choice);
     countTheRound();
