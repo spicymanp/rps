@@ -12,15 +12,12 @@ const score = document.getElementById('game-score');
 const draws = document.getElementById('draws-score');
 const rounds = document.getElementById('rounds');
 
-// rest of my code 
-
 // variables
 
 let player1Score = 0;
 let player2Score = 0;
 let player1Choice = '';
 let player2Choice = '';
-let currentScore = 0;
 let drawCount = 0;
 let roundCount = 0;
 
@@ -43,7 +40,6 @@ function resetValues() {
     player2Score = 0;
     player1Choice = '';
     player2Choice = '';
-    currentScore = 0;
     drawCount = 0;
     roundCount = 0;
 
@@ -51,6 +47,7 @@ function resetValues() {
     player2Selection.textContent = 'nothing';
     draws.textContent = 'Draws: 0';
     rounds.textContent = 'Rounds: 0';
+    score.textContent = 'Score : 0';
 
     populateDropdown();
 
@@ -59,23 +56,20 @@ function resetValues() {
 function resetDropdown() {
 
     dropdown.innerHTML = '';
-
     const defaultOption = document.createElement('option');
     defaultOption.value = '0';
     defaultOption.textContent = 'Select an option!';
     defaultOption.disabled = true;
     defaultOption.disabled = true;
     defaultOption.hidden = true;
-
     dropdown.appendChild(defaultOption);
 }
 
 function populateDropdown() {
 
     resetDropdown();
-
     for (let key in rps) {
-        if (rps.hasOwnProperty(key)) {
+        if (Object.hasOwn(rps, key)) {
             let option = document.createElement('option');
             option.value = key;
             option.textContent = rps[key];
@@ -133,17 +127,24 @@ function countTheRound() {
 
 //const setScore = (winnerOfRound) => winnerOfRound === 'player1' ? player1Score++ : player2Score++;
 
-function electVictor() {
-    // add functionality
+function checkScore(player1Score, player2Score) {
+    if (player1Score === 3) {
+        alert('Player 1 Wins!');
+        resetValues();
+        return;
+    } else if (player2Score === 3) {
+        alert('Player 2 Wins!');
+        resetValues();
+        return;
+    }
 }
-
 
 
 dropdown.addEventListener('change', function () {
     setPlayer1Selection();
 })
 
-playButton.addEventListener('click', (e) => {
+playButton.addEventListener('click', () => {
     if (!setPlayer1Selection()) {
         return;
     }
@@ -155,12 +156,13 @@ playButton.addEventListener('click', (e) => {
     console.log('p2 : ' + player2Choice + ' : ' + typeof (player2Choice));
 
     checkResults(player1Choice, player2Choice);
+    checkScore(player1Score, player2Score);
     countTheRound();
 })
 
 
 
-resetButton.addEventListener('click', (e) => {
+resetButton.addEventListener('click', () => {
     console.log('clicking the reset button');
     resetValues();
 })
@@ -178,7 +180,7 @@ populateDropdown();
 
 // functions and functionality needed
 // set player name
-// get / set player scores (including computer player(cp)
+// get / set player scores (including computer player(cp))
 // game logic - random rolls for cp and comparing results between player selection and computers selection.
 // update html elements using even listeners
 
