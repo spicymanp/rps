@@ -43,8 +43,8 @@ function resetValues() {
     drawCount = 0;
     roundCount = 0;
 
-    player1Selection.textContent = 'nothing';
-    player2Selection.textContent = 'nothing';
+    player1Selection.textContent = '';
+    player2Selection.textContent = '';
     draws.textContent = 'Draws: 0';
     rounds.textContent = 'Rounds: 0';
     score.textContent = 'Score : 0';
@@ -184,3 +184,7 @@ populateDropdown();
 // game logic - random rolls for cp and comparing results between player selection and computers selection.
 // update html elements using even listeners
 
+// websockets (multiplayer)
+
+// ! tailwindcss
+// ! bulma.io
