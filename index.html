@@ -1,68 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-        <title>rps game</title>
 
-        <link rel="stylesheet" href="./styles.css" />
-        <!-- You can add other meta tags, such as description or keywords, here -->
-    </head>
-    <body>
-        <header>
-            <!-- Header content, like navigation links, logos, etc. -->
-            <div id="navBox" class="nav-container">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>rps game</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css" />
+    <!-- You can add other meta tags, such as description or keywords, here -->
+</head>
+
+<body>
+    <header>
+        <!-- Header content, like navigation links, logos, etc. -->
+        <section class="section">
+            <div class="container has-text-centered">
                 <nav>
                     <div>
-                        <h1>RPS</h1>
-                        <h2>a rock, paper, scissors game</h2>
+                        <h1 class="title">RPS</h1>
+                        <h2 class="subtitle">a rock, paper, scissors game</h2>
                     </div>
                 </nav>
             </div>
-        </header>
-        <main>
-            <div class="game-container">
-                <div id="player-1" class="player">
-                    <span id="player-name">Player 1</span>
-                    <div>
-                        <select id="player-selection-dropdown">
-                            <!-- ensureing this is teh first and default value -->
-                            <option value="0" selected disabled hidden>Select an Option!</option>
-                            <!-- js is taking care of the rest of this -->>
-                        </select>
-                    </div>
-                    <h1 id="player1-current-selection"></h1>
-                </div>
-
-                <div id="player-2" class="player">
-                    <span id="player2">Player 2</span>
-                    <div>
-                        <div>
-                            <br />
-                        </div>
-                    </div>
-                    <h1 id="player2-current-selection"></h1>
-                </div>
-                <div class="scores">
-                    <div><span id="game-score">Score: 0</span></div>
-                    <div><span id="draws-score">Draws: 0</span></div>
-                    <div><span id="rounds">Rounds: 0</span></div>
-                </div>
+        </section>
+    </header>
+    <main>
+        <div class="container has-text-centered">
+            <div id="player-1" class="container">
+                <span id="player-name">Player 1</span>
                 <div>
-                    <button id="play-button">Play!</button>
-                    <button id="reset-button">Reset!</button>
+                    <button id="rock-btn" class="rock button">Rock</button>
+                    <button id="paper-btn" class="paper button">Paper</button>
+                    <button id="scissors-btn" class="scissors button">Scissors</button>
                 </div>
+                <h1 id="player1-current-selection"></h1>
             </div>
-        </main>
 
-        <footer>
-            <!-- Footer content, like copyright, contact info, etc. -->
-            <div id="disclaimer" class="footer">
-                rps is a rock, paper, scissors project by paulo toureiro which has been designed for you to have fun at his expense.
+            <div id="player-2" class="container my-3">
+                <span id="player2">Player 2</span>
+                <div>
+                    <div>
+                        <br />
+                    </div>
+                </div>
+                <h1 id="player2-current-selection"></h1>
             </div>
-        </footer>
-        <!-- Link to external JS files -->
-        <script src="script.js"></script>
-    </body>
+
+            <div class="container my-5">
+                <div><span id="game-score">Score: 0</span></div>
+                <div><span id="draws-score">Draws: 0</span></div>
+                <div><span id="rounds">Rounds: 0</span></div>
+            </div>
+            <div class="container my-5">
+                <button id="play-btn" class="button is-primary is-outlined">Play!</button>
+                <button id="reset-btn" class="button is-danger is-outlined">Reset!</button>
+            </div>
+        </div>
+    </main>
+    <!--
+    <footer class="footer">
+        <div class="has-text-centered">
+            <p>
+                rps is a rock, paper, scissors project by paulo toureiro which has been designed for you to have fun at
+                his expense.</p>
+        </div>
+    </footer>
+-->
+    <!-- Link to external JS files -->
+    <script src="script.js"></script>
+</body>
+
 </html>

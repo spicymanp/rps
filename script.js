@@ -3,10 +3,13 @@ console.log('JavaScript file has been loaded! Yipee!'); // just so I know this i
 
 // connect to html elements here 
 const playerName = document.getElementById('player-name');
-const dropdown = document.getElementById('player-selection-dropdown')
+//const dropdown = document.getElementById('player-selection-dropdown')
+const rockButton = document.getElementById('rock-btn');
+const paperButton = document.getElementById('paper-btn');
+const scissorsButton = document.getElementById('scissors-btn');
 const player1Selection = document.getElementById('player1-current-selection');
-const playButton = document.getElementById('play-button');
-const resetButton = document.getElementById('reset-button');
+const playButton = document.getElementById('play-btn');
+const resetButton = document.getElementById('reset-btn');
 const player2Selection = document.getElementById('player2-current-selection')
 const score = document.getElementById('game-score');
 const draws = document.getElementById('draws-score');
@@ -49,11 +52,11 @@ function resetValues() {
     rounds.textContent = 'Rounds: 0';
     score.textContent = 'Score : 0';
 
-    populateDropdown();
 
 }
 
-function resetDropdown() {
+
+/*function resetDropdown() {
 
     dropdown.innerHTML = '';
     const defaultOption = document.createElement('option');
@@ -68,27 +71,27 @@ function resetDropdown() {
 function populateDropdown() {
 
     resetDropdown();
-    for (let key in rps) {
+    for (const key in rps) {
         if (Object.hasOwn(rps, key)) {
-            let option = document.createElement('option');
+            const option = document.createElement('option');
             option.value = key;
             option.textContent = rps[key];
             dropdown.appendChild(option);
         }
     }
     dropdown.value = 0;
-}
+} 
+*/
 
-function setPlayer1Selection() {
-    const selectedMove = dropdown.options[dropdown.selectedIndex].text;
-    if (selectedMove === 'Select an option!') {
-        alert('Please select your next move.');
-        return false;
+function setPlayer1Selection(player1Choice) {
+    if (player1Selection.textContent === '') {
+        buttonActive(player1Choice);
     } else {
-        player1Choice = selectedMove;
-        player1Selection.textContent = player1Choice;
-        return true;
+        player1Selection.textContent = '';
     }
+    console.log(player1Choice);
+    return true;
+
 }
 
 function getPlayer2Selection() {
@@ -101,13 +104,30 @@ function setPlayer2selection() {
     player2Selection.textContent = getPlayer2Selection();
 }
 
+function buttonActive(player1Choice) {
+
+    if (player1Choice === 'Rock') {
+        rockButton.classList.toggle("is-warning");
+        paperButton.classList.remove('is-warning');
+        scissorsButton.classList.remove("is-warning");
+    } else if (player1Choice === 'Paper') {
+        paperButton.classList.toggle("is-warning");
+        rockButton.classList.remove('is-warning');
+        scissorsButton.classList.remove('is-warning');
+    } else {
+        scissorsButton.classList.toggle("is-warning");
+        paperButton.classList.remove('is-warning');
+        rockButton.classList.remove('is-warning');
+    }
+}
+
 function checkResults(p1, p2) {
 
     if (p1 === p2) {
         drawCount++;
-        draws.textContent = 'Draws: ' + drawCount;
+        draws.textContent = `Draws: ${drawCount}`;
         console.log("it's a draw");
-        console.log('outcomes[p1].beats' + ' ' + outcomes[p1].beats);
+        console.log(`${outcomes[p1].beats}' ${outcomes[p1].beats}`);
     }
     else if (outcomes[p1].beats === outcomes[p2].losesTo) {
         console.log('p1 wins the round!');
@@ -116,13 +136,14 @@ function checkResults(p1, p2) {
         console.log('p2 wins the round!');
         player2Score++;
     }
-    return score.textContent = `Score : ${player1Score} | ${player2Score}`;
+    score.textContent = `Score : ${player1Score} | ${player2Score}`;
+    return score.textContent;
 }
 
 
 function countTheRound() {
     roundCount++;
-    rounds.textContent = 'Rounds: ' + roundCount;
+    rounds.textContent = `Rounds: ${roundCount}`;
 }
 
 //const setScore = (winnerOfRound) => winnerOfRound === 'player1' ? player1Score++ : player2Score++;
@@ -132,28 +153,43 @@ function checkScore(player1Score, player2Score) {
         alert('Player 1 Wins!');
         resetValues();
         return;
-    } else if (player2Score === 3) {
+    } if (player2Score === 3) {
         alert('Player 2 Wins!');
         resetValues();
         return;
     }
 }
 
+// dropdown.addEventListener('change', () => setPlayer1Selection());
 
-dropdown.addEventListener('change', function () {
-    setPlayer1Selection();
-})
+rockButton.addEventListener('click', () => {
+    player1Choice = "Rock";
+    setPlayer1Selection('Rock');
+});
+
+paperButton.addEventListener('click', () => {
+    player1Choice = "Paper";
+    setPlayer1Selection('Paper');
+});
+
+scissorsButton.addEventListener('click', () => {
+    player1Choice = "Scissors";
+    setPlayer1Selection('Scissors');
+});
+
+
 
 playButton.addEventListener('click', () => {
-    if (!setPlayer1Selection()) {
-        return;
+    console.log('player1Choice');
+    if (player1Choice === '') {
+        return alert("Please choose your next move.")
     }
-    setPlayer1Selection();
+    //setPlayer1Selection();
     getPlayer2Selection();
     setPlayer2selection();
 
-    console.log('p1 : ' + player1Choice + ' : ' + typeof (player1Choice));
-    console.log('p2 : ' + player2Choice + ' : ' + typeof (player2Choice));
+    console.log(`p1 : ${player1Choice} typeof (${player1Choice})`);
+    console.log(`p2 : ${player2Choice} typeof (${player2Choice})`);
 
     checkResults(player1Choice, player2Choice);
     checkScore(player1Score, player2Score);
@@ -168,7 +204,7 @@ resetButton.addEventListener('click', () => {
 })
 
 
-populateDropdown();
+// populateDropdown();
 
 
 
