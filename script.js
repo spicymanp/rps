@@ -49,8 +49,8 @@ function resetValues() {
     drawCount = 0;
     roundCount = 0;
 
-    player1Selection.textContent = '';
-    player2Selection.textContent = '';
+    //player1Selection.textContent = '';
+    //player2Selection.textContent = '';
     draws.textContent = 'Draws: 0';
     rounds.textContent = 'Rounds: 0';
     score.textContent = 'Score : 0';
