@@ -3,10 +3,7 @@ console.log('JavaScript file has been loaded! Yipee!'); // just so I know this i
 
 // connect to html elements here 
 const playerName = document.getElementById('player-name');
-//const dropdown = document.getElementById('player-selection-dropdown')
-const rockButton = document.getElementById('rock-btn');
-const paperButton = document.getElementById('paper-btn');
-const scissorsButton = document.getElementById('scissors-btn');
+const buttons = document.querySelectorAll('#btn-div > button')
 const player1Selection = document.getElementById('player1-current-selection');
 const playButton = document.getElementById('play-btn');
 const resetButton = document.getElementById('reset-btn');
@@ -52,44 +49,19 @@ function resetValues() {
     rounds.textContent = 'Rounds: 0';
     score.textContent = 'Score : 0';
 
-
-}
-
-
-/*function resetDropdown() {
-
-    dropdown.innerHTML = '';
-    const defaultOption = document.createElement('option');
-    defaultOption.value = '0';
-    defaultOption.textContent = 'Select an option!';
-    defaultOption.disabled = true;
-    defaultOption.disabled = true;
-    defaultOption.hidden = true;
-    dropdown.appendChild(defaultOption);
-}
-
-function populateDropdown() {
-
-    resetDropdown();
-    for (const key in rps) {
-        if (Object.hasOwn(rps, key)) {
-            const option = document.createElement('option');
-            option.value = key;
-            option.textContent = rps[key];
-            dropdown.appendChild(option);
-        }
+    for (const btn of buttons) {
+        btn.classList.remove('is-warning');
     }
-    dropdown.value = 0;
-} 
-*/
+}
+
 
 function setPlayer1Selection(player1Choice) {
     if (player1Selection.textContent === '') {
-        buttonActive(player1Choice);
+
     } else {
         player1Selection.textContent = '';
     }
-    console.log(player1Choice);
+
     return true;
 
 }
@@ -104,20 +76,24 @@ function setPlayer2selection() {
     player2Selection.textContent = getPlayer2Selection();
 }
 
-function buttonActive(player1Choice) {
 
-    if (player1Choice === 'Rock') {
-        rockButton.classList.toggle("is-warning");
-        paperButton.classList.remove('is-warning');
-        scissorsButton.classList.remove("is-warning");
-    } else if (player1Choice === 'Paper') {
-        paperButton.classList.toggle("is-warning");
-        rockButton.classList.remove('is-warning');
-        scissorsButton.classList.remove('is-warning');
-    } else {
-        scissorsButton.classList.toggle("is-warning");
-        paperButton.classList.remove('is-warning');
-        rockButton.classList.remove('is-warning');
+function toggleButtonSelection(btnDivId) {
+    for (const btn of buttons) {
+        btn.addEventListener('click', () => {
+            if (btn.classList.contains('is-warning')) {
+                btn.classList.remove('is-warning');
+                player1Choice = '';
+                console.log(`Player 1 Choice : ${player1Choice}`);
+            } else {
+                for (const item of buttons) {
+                    item.classList.remove('is-warning');
+                }
+                btn.classList.add('is-warning');
+                player1Choice = btn.textContent;
+                setPlayer1Selection(player1Choice);
+                console.log(`Player 1 Choice : ${player1Choice}`);
+            }
+        });
     }
 }
 
@@ -146,7 +122,6 @@ function countTheRound() {
     rounds.textContent = `Rounds: ${roundCount}`;
 }
 
-//const setScore = (winnerOfRound) => winnerOfRound === 'player1' ? player1Score++ : player2Score++;
 
 function checkScore(player1Score, player2Score) {
     if (player1Score === 3) {
@@ -159,24 +134,6 @@ function checkScore(player1Score, player2Score) {
         return;
     }
 }
-
-// dropdown.addEventListener('change', () => setPlayer1Selection());
-
-rockButton.addEventListener('click', () => {
-    player1Choice = "Rock";
-    setPlayer1Selection('Rock');
-});
-
-paperButton.addEventListener('click', () => {
-    player1Choice = "Paper";
-    setPlayer1Selection('Paper');
-});
-
-scissorsButton.addEventListener('click', () => {
-    player1Choice = "Scissors";
-    setPlayer1Selection('Scissors');
-});
-
 
 
 playButton.addEventListener('click', () => {
@@ -204,7 +161,7 @@ resetButton.addEventListener('click', () => {
 })
 
 
-// populateDropdown();
+toggleButtonSelection(buttons);
 
 
 
