@@ -33,6 +33,12 @@ const outcomes = {
     Scissors: { beats: 'Paper', losesTo: 'Rock' }
 }
 
+const images = {
+    Rock: './assets/rock.png',
+    Paper: './assets/paper.png',
+    Scissors: './assets/scissors.png',
+}
+
 // functions 
 
 function resetValues() {
@@ -57,7 +63,7 @@ function resetValues() {
 
 function setPlayer1Selection(player1Choice) {
     if (player1Selection.textContent === '') {
-
+        player1Selection.textContent = player1Choice;
     } else {
         player1Selection.textContent = '';
     }
@@ -90,7 +96,8 @@ function toggleButtonSelection(btnDivId) {
                 }
                 btn.classList.add('is-warning');
                 player1Choice = btn.textContent;
-                setPlayer1Selection(player1Choice);
+
+                //!                                                 setPlayer1Selection(player1Choice);
                 console.log(`Player 1 Choice : ${player1Choice}`);
             }
         });
