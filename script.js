@@ -3,11 +3,11 @@ console.log('JavaScript file has been loaded! Yipee!'); // just so I know this i
 
 // connect to html elements here 
 const playerName = document.getElementById('player-name');
+const p1Icon = document.getElementById('p1-icon');
+const p2Icon = document.getElementById('p2-icon');
 const buttons = document.querySelectorAll('#btn-div > button')
-const player1Selection = document.getElementById('player1-current-selection');
 const playButton = document.getElementById('play-btn');
 const resetButton = document.getElementById('reset-btn');
-const player2Selection = document.getElementById('player2-current-selection')
 const score = document.getElementById('game-score');
 const draws = document.getElementById('draws-score');
 const rounds = document.getElementById('rounds');
@@ -33,7 +33,7 @@ const outcomes = {
     Scissors: { beats: 'Paper', losesTo: 'Rock' }
 }
 
-const images = {
+const icons = {
     Rock: './assets/rock.png',
     Paper: './assets/paper.png',
     Scissors: './assets/scissors.png',
@@ -48,11 +48,11 @@ function resetValues() {
     player2Choice = '';
     drawCount = 0;
     roundCount = 0;
+    p1Icon.src = '';
+    p2Icon.src = '';
 
-    //player1Selection.textContent = '';
-    //player2Selection.textContent = '';
-    draws.textContent = 'Draws: 0';
-    rounds.textContent = 'Rounds: 0';
+    draws.textContent = `Draws: ${drawCount}`;
+    rounds.textContent = `Rounds: ${roundCount}`;
     score.textContent = 'Score : 0';
 
     for (const btn of buttons) {
@@ -61,25 +61,19 @@ function resetValues() {
 }
 
 
-function setPlayer1Selection(player1Choice) {
-    if (player1Selection.textContent === '') {
-        player1Selection.textContent = player1Choice;
+function setPlayerSelection(selection, player) {
+    if (icons[selection] && player === 'p1') {
+        p1Icon.src = icons[selection]
+        // ! p1Icon.alt = ???[selection];    set an alt tag for each image as well.
     } else {
-        player1Selection.textContent = '';
+        p2Icon.src = icons[selection];
     }
-
-    return true;
-
 }
 
 function getPlayer2Selection() {
     const randomNumber = Math.floor(Math.random() * 3) + 1;
     player2Choice = rps[randomNumber];
-    return player2Choice;
-}
-
-function setPlayer2selection() {
-    player2Selection.textContent = getPlayer2Selection();
+    setPlayerSelection(player2Choice);
 }
 
 
@@ -89,16 +83,17 @@ function toggleButtonSelection(btnDivId) {
             if (btn.classList.contains('is-warning')) {
                 btn.classList.remove('is-warning');
                 player1Choice = '';
+                p1Icon.src = '';
                 console.log(`Player 1 Choice : ${player1Choice}`);
             } else {
                 for (const item of buttons) {
                     item.classList.remove('is-warning');
                 }
                 btn.classList.add('is-warning');
-                player1Choice = btn.textContent;
-
-                //!                                                 setPlayer1Selection(player1Choice);
+                player1Choice = btn.textContent.trim();
+                setPlayerSelection(player1Choice, 'p1');
                 console.log(`Player 1 Choice : ${player1Choice}`);
+                //! setPlayer1Selection(player1Choice);
             }
         });
     }
@@ -134,11 +129,9 @@ function checkScore(player1Score, player2Score) {
     if (player1Score === 3) {
         alert('Player 1 Wins!');
         resetValues();
-        return;
     } if (player2Score === 3) {
         alert('Player 2 Wins!');
         resetValues();
-        return;
     }
 }
 
@@ -148,9 +141,8 @@ playButton.addEventListener('click', () => {
     if (player1Choice === '') {
         return alert("Please choose your next move.")
     }
-    //setPlayer1Selection();
+
     getPlayer2Selection();
-    setPlayer2selection();
 
     console.log(`p1 : ${player1Choice} typeof (${player1Choice})`);
     console.log(`p2 : ${player2Choice} typeof (${player2Choice})`);
@@ -188,3 +180,26 @@ toggleButtonSelection(buttons);
 
 // ! tailwindcss
 // ! bulma.io
+
+
+/*
+
+function setPlayer1Selection(player1Choice) {
+    if (player1Selection.textContent === '') {
+        player1Selection.textContent = player1Choice;
+    } else {
+        player1Selection.textContent = '';
+    }
+
+    return true;
+
+}
+
+
+
+
+function setPlayer2selection() {
+    player2Selection.textContent = getPlayer2Selection();
+}
+
+*/
