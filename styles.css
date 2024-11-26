@@ -27,7 +27,7 @@
 .game-topbar {
     display: flex;
     justify-content: space-between;
-    top: 60px; bottom: -30px;
+    top: 20px; bottom: -30px;
 }
 
 #player-1-details,  #player-2-details {
@@ -45,8 +45,9 @@
 
 #versus-image {
     overflow: visible;
-    width: 96px;
-    height: 96px;
+    width: 140px;
+    height: 140px;
+    right: 18px;
 }
 
 
