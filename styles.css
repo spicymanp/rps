@@ -10,6 +10,13 @@
     background-color: greenyellow;
 }
 
+.empty-health-block {
+    width: 18px; 
+    height: 18px; 
+    border-radius: 6px; 
+    border: 1px solid greenyellow;    
+}
+
 .health-bar {
     width: 100px !important; padding: 0 !important; margin: 0 !important;
 }
@@ -17,6 +24,25 @@
 .p2 {
     align-items: right; justify-content: end; right: -25px;
 }
+
+
+#player-1-details,  #player-2-details {
+    border: 1px solid red;
+    max-width: 250px;
+    min-width: 250px;
+}
+#player-1-details {
+    position: relative;
+    left: 00px;
+}
+#player-2-details {
+    margin-right: -6px;
+    right: -850px;
+    position: relative;
+}
+    
+    
+
 
 /* :root {
     --bgColour: #222831;
