@@ -1,16 +1,22 @@
 
-
 .main-container {
-    background-color: red;
-    min-width: 500px;
-    max-width: 900px;
-    margin: 0 auto;
-    min-height: 350px;
-    max-height: 650px;
+    max-width: 1200px !important; 
 }
 
+.health-block {
+    width: 18px; 
+    height: 18px; 
+    border-radius: 6px; 
+    background-color: greenyellow;
+}
 
+.health-bar {
+    width: 100px !important; padding: 0 !important; margin: 0 !important;
+}
 
+.p2 {
+    align-items: right; justify-content: end; right: -25px;
+}
 
 /* :root {
     --bgColour: #222831;
