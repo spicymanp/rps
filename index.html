@@ -17,59 +17,63 @@
     <div id="main-container" class="container card py-5 my-6" style="height: 700px;">
         <div id="header-container" class="container" style="top: -10px;">
             <figure class="container image is-96x96">
-                <img src="./assets/rock-paper-scissors.png" alt="scissors">
+                <img src="./assets/rock-paper-scissors.png" alt="logo">
             </figure>
             <h1 class="title has-text-centered is-1">RPS</h1>
             <h2 class="subtitle has-text-centered is-4">a rock, paper, scissors game</h2>
         </div>
 
-        <div id="game-container" class="container" style="top: 60px; bottom: -30px;">
-            <div class="columns is-vcentered">
-                <div id="player-1-details" class="column px-6">
-                    <div id="p1-health" class="columns container health-bar">
-                        <div class="health-block"></div>
-                        <span>&nbsp;</span>
-                        <div class="empty-health-block"></div>
-                        <span>&nbsp;</span>
-                        <div class="empty-health-block"></div>
-                    </div>
-                    <span class=" title is-3" id="player1">Player 1</span>
-                </div>
+        <div id="game-topbar" class="container game-topbar columns is-vcentered">
 
-
-                <div id="player-2-details" class="column is-2 px-6">
-                    <div id=" p2-health" class="columns container health-bar p2">
-                        <div class="empty-health-block"></div>
-                        <span>&nbsp;</span>
-                        <div class="health-block"></div>
-                        <span>&nbsp;</span>
-                        <div class="health-block"></div>
-                    </div>
-                    <span class=" title is-3" id="player2">Player 2</span>
+            <div id="player-1-details" class="column is-4 px-6">
+                <div id=" p1-health" class="columns container health-bar">
+                    <div class="health-block"></div>
+                    <span>&nbsp;</span>
+                    <div class="empty-health-block"></div>
+                    <span>&nbsp;</span>
+                    <div class="empty-health-block"></div>
                 </div>
+                <span class=" title is-3" id="player1">Player 1</span>
+            </div>
+            <div id="versus-container" class="column is-4">
+                <figure id="versus-image" class="container">
+                    <img src="./assets/versus.png" alt="versus">
+                </figure>
             </div>
 
-
-
-
-            <div class="column is-5 has-text-centered px-6" id="player-1">
-
-            </div>
-
-            <!-- <canvas id="confetti"></canvas> for confetti to be added later -->
-
-
-
-
-            <div class="column is-5 has-text-right" id="player-2">
-
-                <div>
-                    <figure class="image container is-96x96 mt-6">
-                        <!-- <img id="p2-icon" src="./assets/placeholder.png"> -->
-                    </figure>
+            <div id="player-2-details" class="column is-4 px-6">
+                <div id=" p2-health" class="columns container health-bar p2">
+                    <div class="empty-health-block"></div>
+                    <span>&nbsp;</span>
+                    <div class="health-block"></div>
+                    <span>&nbsp;</span>
+                    <div class="health-block"></div>
                 </div>
+                <span class=" title is-3" id="player2">Player 2</span>
             </div>
         </div>
+
+
+
+
+        <div class="column is-5 has-text-centered px-6" id="player-1">
+
+        </div>
+
+        <!-- <canvas id="confetti"></canvas> for confetti to be added later -->
+
+
+
+
+        <div class="column is-5 has-text-right" id="player-2">
+
+            <div>
+                <figure class="image container is-96x96 mt-6">
+                    <!-- <img id="p2-icon" src="./assets/placeholder.png"> -->
+                </figure>
+            </div>
+        </div>
+    </div>
     </div>
 </main>
 

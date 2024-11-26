@@ -24,24 +24,30 @@
 .p2 {
     align-items: right; justify-content: end; right: -25px;
 }
-
+.game-topbar {
+    display: flex;
+    justify-content: space-between;
+    top: 60px; bottom: -30px;
+}
 
 #player-1-details,  #player-2-details {
-    border: 1px solid red;
     max-width: 250px;
     min-width: 250px;
 }
-#player-1-details {
-    position: relative;
-    left: 00px;
-}
+
 #player-2-details {
-    margin-right: -6px;
-    right: -850px;
-    position: relative;
+    margin-right: -28px;
 }
-    
-    
+
+#versus-container {
+    /* something  */
+}
+
+#versus-image {
+    overflow: visible;
+    width: 96px;
+    height: 96px;
+}
 
 
 /* :root {
