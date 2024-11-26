@@ -1,4 +1,18 @@
-:root {
+
+
+.main-container {
+    background-color: red;
+    min-width: 500px;
+    max-width: 900px;
+    margin: 0 auto;
+    min-height: 350px;
+    max-height: 650px;
+}
+
+
+
+
+/* :root {
     --bgColour: #222831;
     --forColour: #eeeeee;
     --priColour: #31363f;
@@ -102,4 +116,4 @@ h2 {
 p {
     font-size: 12px;
     color: var(--forColour);
-}
+} */

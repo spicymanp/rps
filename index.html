@@ -8,54 +8,64 @@
     <title>rps game</title>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css" />
+    <link rel="stylesheet" href="styles.css">
+
     <!-- You can add other meta tags, such as description or keywords, here -->
 </head>
-<section class="section">
-    <main class="container has-text-centered column is-3">
-        <div class="card py-2 my-1 ">
-            <div class="container ">
-                <figure class="image container is-96x96">
-                    <img src="./assets/rock-paper-scissors.png" alt="scissors">
-                </figure>
-                <h1 class="title is-1">RPS</h1>
-                <h2 class="subtitle is-4">a rock, paper, scissors game</h2>
-            </div>
-            <div id="player-1" class="container mt-6 mb-3"">
-                    <span class=" title is-3" id="player-name">Player 1</span>
-            </div>
-            <div>
-                <div id="btn-div">
-                    <button id="rock-btn" class="rock button">Rock</button>
-                    <button id="paper-btn" class="paper button">Paper</button>
-                    <button id="scissors-btn" class="scissors button">Scissors</button>
-                </div>
-                <figure class="image container is-96x96 mt-6">
-                    <img id="p1-icon" src="./assets/placeholder.png">
-                </figure>
+
+<main class="container has-text-centered">
+    <div class="container card py-5 my-6">
+        <div>
+            <figure class="image container is-96x96">
+                <img src="./assets/rock-paper-scissors.png" alt="scissors">
+            </figure>
+            <h1 class="title is-1">RPS</h1>
+            <h2 class="subtitle is-4">a rock, paper, scissors game</h2>
+        </div>
+
+        <div class="columns">
+            <div class="column is-5" id="player-1">
+                <span class=" title is-3" id="player-name">Player 1</span>
             </div>
 
-            <div id="player-2" class="container mt-6 mb-3">
+            <!-- <canvas id="confetti"></canvas> for confetti to be added later -->
+
+            <div class="column is-5" id="player-2">
                 <span class=" title is-3" id="player2">Player 2</span>
                 <div>
                     <figure class="image container is-96x96 mt-6">
                         <img id="p2-icon" src="./assets/placeholder.png">
                     </figure>
                 </div>
-
             </div>
 
-            <div class="container my-5">
+
+            <div>
                 <div><span id="game-score">Score: 0</span></div>
                 <div><span id="draws-score">Draws: 0</span></div>
                 <div><span id="rounds">Rounds: 0</span></div>
             </div>
-            <div class="container my-5">
-                <button id="play-btn" class="button is-primary is-outlined">Play!</button>
-                <button id="reset-btn" class="button is-danger is-outlined">Reset!</button>
-            </div>
+
         </div>
-    </main>
-</section>
+
+        <div>
+            <div id="btn-div">
+                <button id="rock-btn" class="rock button">Rock</button>
+                <button id="paper-btn" class="paper button">Paper</button>
+                <button id="scissors-btn" class="scissors button">Scissors</button>
+            </div>
+            <figure class="image container is-96x96 mt-6">
+                <img id="p1-icon" src="./assets/placeholder.png">
+            </figure>
+        </div>
+        <div>
+            <button id="play-btn" class="button is-primary is-outlined">Play!</button>
+            <button id="reset-btn" class="button is-danger is-outlined">Reset!</button>
+        </div>
+</main>
+
+
+
 
 <footer class="footer p-5">
     <div class="has-text-centered">
@@ -71,6 +81,7 @@
 
 <!-- Link to external JS files -->
 <script src="script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
 </body>
 
 </html>

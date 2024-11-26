@@ -105,9 +105,17 @@ function checkResults(p1, p2) {
         drawCount++;
         draws.textContent = `Draws: ${drawCount}`;
         console.log("it's a draw");
-        console.log(`${outcomes[p1].beats}' ${outcomes[p1].beats}`);
+        console.log(`${outcomes[p1].beats} ${outcomes[p1].beats}`);
     }
     else if (outcomes[p1].beats === outcomes[p2].losesTo) {
+        console.log(`outcomes[p1] : ${outcomes[p1]}`);
+        console.log(`outcomes[p1].beats : ${outcomes[p1].beats}`);
+        console.log(`outcomes[p1].losesTo : ${outcomes[p1].losesTo}`);
+
+        console.log(`outcomes[p2] : ${outcomes[p2]}`);
+        console.log(`outcomes[p2].beats : ${outcomes[p2].beats}`);
+        console.log(`outcomes[p2].losesTo : ${outcomes[p2].losesTo}`);
+
         console.log('p1 wins the round!');
         player1Score++;
     } else {
@@ -115,7 +123,7 @@ function checkResults(p1, p2) {
         player2Score++;
     }
     score.textContent = `Score : ${player1Score} | ${player2Score}`;
-    return score.textContent;
+
 }
 
 
@@ -170,17 +178,21 @@ toggleButtonSelection(buttons);
 
 
 
-// functions and functionality needed
-// set player name
-// get / set player scores (including computer player(cp))
-// game logic - random rolls for cp and comparing results between player selection and computers selection.
-// update html elements using even listeners
+//  functions and functionality needed
+//  set player name
+//  get / set player scores (including computer player(cp))
+//  game logic - random rolls for cp and comparing results between player selection and computers selection.
+//  update html elements using even listeners
+//  websockets (multiplayer)
+//  ! tailwindcss
+//  ! bulma.io
+//  ! Supabase
+//  ! express node
 
-// websockets (multiplayer)
-
-// ! tailwindcss
-// ! bulma.io
-
+// rock, paper, scissors buttons innitiate the game
+// or game starts immediately and you have a few moments to make your choice.
+// health bars (inverse of best of three)
+// bigger annimations 
 
 /*
 
