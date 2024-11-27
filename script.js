@@ -6,16 +6,17 @@ const playerName = document.getElementById('player-name');
 const p1Icon = document.getElementById('p1-icon');
 const p2Icon = document.getElementById('p2-icon');
 const buttons = document.querySelectorAll('#btn-div > button')
+
 const playButton = document.getElementById('play-btn');
 const resetButton = document.getElementById('reset-btn');
-const score = document.getElementById('game-score');
+//const score = document.getElementById('game-score');
 const draws = document.getElementById('draws-score');
 const rounds = document.getElementById('rounds');
 
 // variables
 
-let player1Score = 0;
-let player2Score = 0;
+let p1Health = 3;
+let p2Health = 1;
 let player1Choice = '';
 let player2Choice = '';
 let drawCount = 0;
@@ -39,11 +40,16 @@ const icons = {
     Scissors: './assets/scissors.png',
 }
 
+// const healthBar = {
+//     0: 'class="empty-health-block"',
+//     1: 'class="health-block'
+// }
+
 // functions 
 
 function resetValues() {
-    player1Score = 0;
-    player2Score = 0;
+    p1Health = 3;
+    p2Health = 1;
     player1Choice = '';
     player2Choice = '';
     drawCount = 0;
@@ -99,6 +105,7 @@ function toggleButtonSelection(btnDivId) {
     }
 }
 
+
 function checkResults(p1, p2) {
 
     if (p1 === p2) {
@@ -117,12 +124,12 @@ function checkResults(p1, p2) {
         console.log(`outcomes[p2].losesTo : ${outcomes[p2].losesTo}`);
 
         console.log('p1 wins the round!');
-        player1Score++;
+        p2Health--;
     } else {
         console.log('p2 wins the round!');
-        player2Score++;
+        p1Health--;
     }
-    score.textContent = `Score : ${player1Score} | ${player2Score}`;
+    score.textContent = `Score : ${p1Health} | ${p2Health}`;
 
 }
 
@@ -134,15 +141,32 @@ function countTheRound() {
 
 
 function checkScore(player1Score, player2Score) {
-    if (player1Score === 3) {
-        alert('Player 1 Wins!');
-        resetValues();
-    } if (player2Score === 3) {
+    if (player1Score === 0) {
         alert('Player 2 Wins!');
+        resetValues();
+    } if (player2Score === 0) {
+        alert('Player 1 Wins!');
         resetValues();
     }
 }
 
+function populateHealthBar(playerHealth, playerId) {
+    const healthBlocks = document.querySelectorAll(`#${playerId} > div`);
+    console.log("Health Passed:", playerHealth, playerId); // Debugging step
+
+    // Loop through all health blocks
+    healthBlocks.forEach((block, index) => {
+        if (index < playerHealth) {
+            // Full blocks for health within the range
+            block.classList.add('full-health-block');
+            block.classList.remove('empty-health-block');
+        } else {
+            // Empty blocks for health outside the range
+            block.classList.add('empty-health-block');
+            block.classList.remove('full-health-block');
+        }
+    });
+}
 
 playButton.addEventListener('click', () => {
     console.log('player1Choice');
@@ -156,7 +180,7 @@ playButton.addEventListener('click', () => {
     console.log(`p2 : ${player2Choice} typeof (${player2Choice})`);
 
     checkResults(player1Choice, player2Choice);
-    checkScore(player1Score, player2Score);
+    checkScore(p1Health, p2Health);
     countTheRound();
 })
 
@@ -169,7 +193,8 @@ resetButton.addEventListener('click', () => {
 
 
 toggleButtonSelection(buttons);
-
+populateHealthBar(p1Health, 'p1-health');
+populateHealthBar(p2Health, 'p2-health');
 
 
 
@@ -188,30 +213,12 @@ toggleButtonSelection(buttons);
 //  ! bulma.io
 //  ! Supabase
 //  ! express node
+//  ! postcss
+// ! supabase.com
+// ! expressjs.com
+
 
 // rock, paper, scissors buttons innitiate the game
 // or game starts immediately and you have a few moments to make your choice.
 // health bars (inverse of best of three)
 // bigger annimations 
-
-/*
-
-function setPlayer1Selection(player1Choice) {
-    if (player1Selection.textContent === '') {
-        player1Selection.textContent = player1Choice;
-    } else {
-        player1Selection.textContent = '';
-    }
-
-    return true;
-
-}
-
-
-
-
-function setPlayer2selection() {
-    player2Selection.textContent = getPlayer2Selection();
-}
-
-*/

@@ -3,7 +3,7 @@
     max-width: 1200px !important; 
 }
 
-.health-block {
+.full-health-block {
     width: 18px; 
     height: 18px; 
     border-radius: 6px; 
@@ -40,7 +40,7 @@
 }
 
 #versus-container {
-    /* something  */
+    border: 1px solid red;
 }
 
 #versus-image {
