@@ -15,12 +15,13 @@ const rounds = document.getElementById('rounds');
 
 // variables
 
-let p1Health = 3;
+let p1Health = 2;
 let p2Health = 1;
 let player1Choice = '';
 let player2Choice = '';
 let drawCount = 0;
 let roundCount = 0;
+const isReversed = false;
 
 const rps = {
     1: 'Rock',
@@ -49,7 +50,7 @@ const icons = {
 
 function resetValues() {
     p1Health = 3;
-    p2Health = 1;
+    p2Health = 3;
     player1Choice = '';
     player2Choice = '';
     drawCount = 0;
@@ -150,13 +151,16 @@ function checkScore(player1Score, player2Score) {
     }
 }
 
-function populateHealthBar(playerHealth, playerId) {
+function populateHealthBar(playerHealth, playerId, isReversed) {
     const healthBlocks = document.querySelectorAll(`#${playerId} > div`);
     console.log("Health Passed:", playerHealth, playerId); // Debugging step
 
     // Loop through all health blocks
     healthBlocks.forEach((block, index) => {
-        if (index < playerHealth) {
+
+        const fillCondition = isReversed ? index >= healthBlocks.length - playerHealth : index < playerHealth;
+
+        if (fillCondition) {
             // Full blocks for health within the range
             block.classList.add('full-health-block');
             block.classList.remove('empty-health-block');
@@ -194,7 +198,7 @@ resetButton.addEventListener('click', () => {
 
 toggleButtonSelection(buttons);
 populateHealthBar(p1Health, 'p1-health');
-populateHealthBar(p2Health, 'p2-health');
+populateHealthBar(p2Health, 'p2-health', true);
 
 
 
