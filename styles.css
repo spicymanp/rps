@@ -51,6 +51,81 @@
 }
 
 
+
+
+
+/* styles.css */
+
+/* Basic styles */
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/* Modal styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scrolling if needed */
+    background-color: rgba(0, 0, 0, 0.4); /* Black background with opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: white;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Modal width */
+    max-width: 500px; /* Max width */
+    text-align: center;
+}
+
+/* Close button (x) */
+.close {
+    color: #aaa;
+    font-size: 30px;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    cursor: pointer;
+}
+
+/* Close button hover effect */
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Dismiss button */
+#dismissBtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#dismissBtn:hover {
+    background-color: #45a049;
+}
+
+
+
+
+
+
+
+
 /* :root {
     --bgColour: #222831;
     --forColour: #eeeeee;

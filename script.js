@@ -7,8 +7,8 @@ const p1Icon = document.getElementById('p1-icon');
 const p2Icon = document.getElementById('p2-icon');
 const buttons = document.querySelectorAll('#btn-div > button')
 
-const playButton = document.getElementById('play-btn');
-const resetButton = document.getElementById('reset-btn');
+// const playButton = document.getElementById('play-btn');
+// const resetButton = document.getElementById('reset-btn');
 //const score = document.getElementById('game-score');
 const draws = document.getElementById('draws-score');
 const rounds = document.getElementById('rounds');
@@ -84,27 +84,27 @@ function getPlayer2Selection() {
 }
 
 
-function toggleButtonSelection(btnDivId) {
-    for (const btn of buttons) {
-        btn.addEventListener('click', () => {
-            if (btn.classList.contains('is-warning')) {
-                btn.classList.remove('is-warning');
-                player1Choice = '';
-                p1Icon.src = '';
-                console.log(`Player 1 Choice : ${player1Choice}`);
-            } else {
-                for (const item of buttons) {
-                    item.classList.remove('is-warning');
-                }
-                btn.classList.add('is-warning');
-                player1Choice = btn.textContent.trim();
-                setPlayerSelection(player1Choice, 'p1');
-                console.log(`Player 1 Choice : ${player1Choice}`);
-                //! setPlayer1Selection(player1Choice);
-            }
-        });
-    }
-}
+// function toggleButtonSelection(btnDivId) {
+//     for (const btn of buttons) {
+//         btn.addEventListener('click', () => {
+//             if (btn.classList.contains('is-warning')) {
+//                 btn.classList.remove('is-warning');
+//                 player1Choice = '';
+//                 p1Icon.src = '';
+//                 console.log(`Player 1 Choice : ${player1Choice}`);
+//             } else {
+//                 for (const item of buttons) {
+//                     item.classList.remove('is-warning');
+//                 }
+//                 btn.classList.add('is-warning');
+//                 player1Choice = btn.textContent.trim();
+//                 setPlayerSelection(player1Choice, 'p1');
+//                 console.log(`Player 1 Choice : ${player1Choice}`);
+//                 //! setPlayer1Selection(player1Choice);
+//             }
+//         });
+//     }
+// }
 
 
 function checkResults(p1, p2) {
@@ -172,31 +172,31 @@ function populateHealthBar(playerHealth, playerId, isReversed) {
     });
 }
 
-playButton.addEventListener('click', () => {
-    console.log('player1Choice');
-    if (player1Choice === '') {
-        return alert("Please choose your next move.")
-    }
+// playButton.addEventListener('click', () => {
+//     console.log('player1Choice');
+//     if (player1Choice === '') {
+//         return alert("Please choose your next move.")
+//     }
 
-    getPlayer2Selection();
+//     getPlayer2Selection();
 
-    console.log(`p1 : ${player1Choice} typeof (${player1Choice})`);
-    console.log(`p2 : ${player2Choice} typeof (${player2Choice})`);
+//     console.log(`p1 : ${player1Choice} typeof (${player1Choice})`);
+//     console.log(`p2 : ${player2Choice} typeof (${player2Choice})`);
 
-    checkResults(player1Choice, player2Choice);
-    checkScore(p1Health, p2Health);
-    countTheRound();
-})
-
-
-
-resetButton.addEventListener('click', () => {
-    console.log('clicking the reset button');
-    resetValues();
-})
+//     checkResults(player1Choice, player2Choice);
+//     checkScore(p1Health, p2Health);
+//     countTheRound();
+// })
 
 
-toggleButtonSelection(buttons);
+
+// resetButton.addEventListener('click', () => {
+//     console.log('clicking the reset button');
+//     resetValues();
+// })
+
+
+// ! toggleButtonSelection(buttons);
 populateHealthBar(p1Health, 'p1-health');
 populateHealthBar(p2Health, 'p2-health', true);
 
@@ -220,7 +220,10 @@ populateHealthBar(p2Health, 'p2-health', true);
 //  ! postcss
 // ! supabase.com
 // ! expressjs.com
-
+// ! https://www.npmjs.com/package/canvas-confetti
+// ! https://github.com/tsparticles/tsparticles?tab=readme-ov-file#usage
+// ! https://www.rapidtables.com/web/css/css-color.html
+// ! getbootstrap.com
 
 // rock, paper, scissors buttons innitiate the game
 // or game starts immediately and you have a few moments to make your choice.

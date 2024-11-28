@@ -81,7 +81,7 @@
 
 
 
-<footer class="footer p-5">
+<footer class="footer p-5" style="position: fixed; bottom: 0; width: 100%;">
     <div class="has-text-centered">
         <pb>
             <strong>RPS</strong> is a <strong>r</strong>ock, <strong>p</strong>aper, <strong>s</strong>cissors
@@ -100,15 +100,58 @@
 
 
 
-<div>
-    <div id="btn-div">
-        <button id="rock-btn" class="rock button">Rock</button>
-        <button id="paper-btn" class="paper button">Paper</button>
-        <button id="scissors-btn" class="scissors button">Scissors</button>
+<!-- Modal Structure -->
+<div id="my-modal" class="modal">
+    <div class="modal-background"></div>
+    <div class="modal-card" style="top: 5rem;">
+        <header class="modal-card-head column">
+            <p class="modal-card-title has-text-centered">RPS</p>
+            <p class="modal-card-subtitle has-text-centered">a rock, paper, scissors game</p>
+        </header>
+
+        <section class="modal-card-body has-text-centered">
+            Welcome to RPS, a simple rock, paper, scissors game. <br>
+            The rules are simple, each player has three lives. <br>
+            Once you hit the play button below, you'll get a few moments
+            to pick your first move, at the same time a super juicy, hyper-advanced AI will pick its
+            competing move.<br><br>
+
+            Last player standing wins.
+
+        </section>
+        <footer class="modal-card-foot">
+            <div class="buttons" style="margin: auto;">
+                <button id="start-btn" class="button is-primary is-outlined">Play!</button>
+            </div>
+        </footer>
     </div>
-    <figure class="image container is-96x96 mt-6">
-        <img id="p1-icon" src="./assets/placeholder.png">
-    </figure>
+</div>
+
+
+
+
+
+
+<!-- Link to my JS files -->
+<script src="script.js"></script>
+<!-- Link to external JS files -->
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+
+<script src="modal.js"></script>
+</body>
+
+</html>
+
+
+
+<!-- <div id="btn-div">
+    <button id="rock-btn" class="rock button">Rock</button>
+    <button id="paper-btn" class="paper button">Paper</button>
+    <button id="scissors-btn" class="scissors button">Scissors</button>
+</div>
+<figure class="image container is-96x96 mt-6">
+    <img id="p1-icon" src="./assets/placeholder.png">
+</figure>
 </div>
 
 <div>
@@ -121,17 +164,4 @@
 <div>
     <button id="play-btn" class="button is-primary is-outlined">Play!</button>
     <button id="reset-btn" class="button is-danger is-outlined">Reset!</button>
-</div>
-
-
-
-
-
-<!-- Link to my JS files -->
-<script src="script.js"></script>
-<!-- Link to external JS files -->
-<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
-
-</body>
-
-</html>
+</div> -->
