@@ -1,4 +1,4 @@
-// script.js
+// ! modal script - modal is commented out at the moment for easier testing
 
 // Wait for the DOM to fully load
 window.onload = () => {
