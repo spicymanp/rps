@@ -48,8 +48,7 @@
     width: 100%;    
     top: 50px;
     display: flex;
-    justify-content: left;
-    border: 1px solid red;
+    justify-content: left;    
 }
 
 #player-1-history, #player-2-history {
