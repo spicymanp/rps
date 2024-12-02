@@ -15,8 +15,8 @@ const rounds = document.getElementById('rounds');
 
 // variables
 
-let p1Health = 2;
-let p2Health = 1;
+let p1Health = 3;
+let p2Health = 3;
 let player1Choice = '';
 let player2Choice = '';
 let drawCount = 0;
@@ -207,12 +207,7 @@ populateHealthBar(p2Health, 'p2-health', true);
 
 
 
-//  functions and functionality needed
-//  set player name
-//  get / set player scores (including computer player(cp))
-//  game logic - random rolls for cp and comparing results between player selection and computers selection.
-//  update html elements using even listeners
-//  websockets (multiplayer)
+
 //  ! tailwindcss
 //  ! bulma.io
 //  ! Supabase
@@ -225,7 +220,11 @@ populateHealthBar(p2Health, 'p2-health', true);
 // ! https://www.rapidtables.com/web/css/css-color.html
 // ! getbootstrap.com
 
-// rock, paper, scissors buttons innitiate the game
-// or game starts immediately and you have a few moments to make your choice.
-// health bars (inverse of best of three)
-// bigger annimations 
+
+// starts immediately after clicking start (in modal) player gets a few moments to make their choice.
+// bigger annimations - cycle between rock, paper and scissors while player makes choice
+// confetti after player 1 victory, something else after loss?
+// set player name
+// show a history of previous moves under player names
+
+//  websockets (multiplayer)
