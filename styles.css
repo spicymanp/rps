@@ -48,7 +48,7 @@
     width: 100%;    
     top: 50px;
     display: flex;
-    justify-content: left;    
+    justify-content: space-between;    
 }
 
 #player-1-history, #player-2-history {
@@ -56,6 +56,16 @@
     min-height: 96px;
     min-width: 303px;
     max-width: 303px;
+}
+
+#player-1-history {
+    justify-content: flex-end;
+    left: -40px;
+}
+
+#player-2-history {
+    justify-content: flex-start;
+    right: -90px;
 }
 
 

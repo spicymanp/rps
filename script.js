@@ -15,8 +15,8 @@ const rounds = document.getElementById('rounds');
 
 // variables
 
-let p1Health = 3;
-let p2Health = 3;
+let p1Health = 1;
+let p2Health = 2;
 let player1Choice = '';
 let player2Choice = '';
 let drawCount = 0;
