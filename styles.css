@@ -30,28 +30,35 @@
 .p2 {
     align-items: right; 
     justify-content: end; 
-    right: -25px;
+    /* right: -25px; */
 }
 .game-topbar {
+    width: 100%;
     display: flex; 
     justify-content: space-between; 
-    
+    border: 1px solid pink;
 }
 
 #player-1-details,  #player-2-details {
-    max-width: 250px;
-    min-width: 250px;    
+    /* max-width: 250px;
+    min-width: 250px;     */
 }
 
 #player-2-details {
-    margin-right: -28px;
+    
+    /* align-items: right; 
+    justify-content: end; 
+    justify-items: end;
+    text-align: end;
+    align-items: end;
+     */
 }
 
 .history-wrapper {
     width: 100%;        
     display: flex;
     justify-content: space-between;    
-    /* border: 1px solid red; */
+    border: 1px solid red;
     margin-top: -50px;
 }
 
@@ -60,11 +67,12 @@
     min-height: 96px;
     min-width: 303px;
     max-width: 303px;
-    /* border: 1px solid green; */
+    border: 1px solid green;
 }
 
-#player-1-history {
-/* something */
+#player-1-history img, #player-2-history img {
+max-width: 80px;
+max-width: 80px;
 }
 
 #player-2-history {
