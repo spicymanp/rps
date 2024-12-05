@@ -40,18 +40,14 @@
 }
 
 #player-1-details,  #player-2-details {
-    /* max-width: 250px;
-    min-width: 250px;     */
+    max-width: 250px;
+    min-width: 250px;    
+    border: 1px solid purple;
 }
 
 #player-2-details {
     
-    /* align-items: right; 
-    justify-content: end; 
-    justify-items: end;
-    text-align: end;
-    align-items: end;
-     */
+    /* something */
 }
 
 .history-wrapper {
@@ -83,13 +79,13 @@ max-width: 80px;
 
 #versus-container {
     border: none;
+    
+
 }
 
 #versus-image {
-    overflow: visible;
     width: 140px;
     height: 140px;
-    right: 18px;
 }
 
 
@@ -98,11 +94,6 @@ max-width: 80px;
 
 /* styles.css */
 
-/* Basic styles */
-body {
-    margin: 0;
-    padding: 0;
-}
 
 /* Modal styles */
 .modal {
