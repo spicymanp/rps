@@ -15,81 +15,100 @@
 
 <main class="container">
     <div id="main-container" class="container card py-5 my-6" style="height: 700px;">
-        <div id="header-container" class="container" style="top: -10px;">
-            <figure class="container image is-96x96">
-                <img src="./assets/rock-paper-scissors.png" alt="logo">
-            </figure>
-            <h1 class="title has-text-centered is-1">RPS</h1>
-            <h2 class="subtitle has-text-centered is-4">a rock, paper, scissors game</h2>
-        </div>
-
-        <div id="game-topbar" class="container game-topbar columns is-vcentered">
-
-            <div id="player-1-details" class="column is-4 px-6">
-                <div id="p1-health" class="columns container health-bar">
-                    <div class=""></div>
-                    <span>&nbsp;</span>
-                    <div class=""></div>
-                    <span>&nbsp;</span>
-                    <div class=""></div>
-                </div>
-                <span class=" title is-3" id="player1">Player 1</span>
-            </div>
-
-            <div id="versus-container" class="column is-4">
-                <figure id="versus-image" class="container">
-                    <img src="./assets/versus.png" alt="versus">
+        <div class="section">
+            <div id="header-container" class="container">
+                <figure class="container image is-96x96">
+                    <img src="./assets/rock-paper-scissors.png" alt="logo">
                 </figure>
+                <h1 class="title has-text-centered is-1">RPS</h1>
+                <h2 class="subtitle has-text-centered is-4">a rock, paper, scissors game</h2>
             </div>
 
-            <div id="player-2-details" class="column is-4 px-6">
-                <div id="p2-health" class="columns container health-bar p2">
-                    <div class=""></div>
-                    <span>&nbsp;</span>
-                    <div class=""></div>
-                    <span>&nbsp;</span>
-                    <div class=""></div>
+            <div id="game-topbar" class="container game-topbar columns is-1 is-vcentered">
+
+                <div id="player-1-details" class="column is-4 px-6">
+                    <div id="p1-health" class="columns container health-bar">
+                        <div class=""></div>
+                        <span>&nbsp;</span>
+                        <div class=""></div>
+                        <span>&nbsp;</span>
+                        <div class=""></div>
+                    </div>
+                    <span class=" title is-3" id="player1">Player 1</span>
                 </div>
-                <span class=" title is-3" id="player2">Player 2</span>
+
+                <div id="versus-container" class="column is-4">
+                    <figure id="versus-image" class="container">
+                        <img src="./assets/versus.png" alt="versus">
+                    </figure>
+                </div>
+
+                <div id="player-2-details" class="column is-4 px-6">
+                    <div id="p2-health" class="columns container health-bar p2">
+                        <div class=""></div>
+                        <span>&nbsp;</span>
+                        <div class=""></div>
+                        <span>&nbsp;</span>
+                        <div class=""></div>
+                    </div>
+                    <span class=" title is-3" id="player2">Player 2</span>
+                </div>
             </div>
         </div>
 
-        <div class="history-wrapper container columns">
-            <div class="container columns" id="player-1-history">
-                <div class="">
-                    <figure id="versus-image" class="container">
-                        <img src="./assets/paper.png" alt="paper">
-                    </figure>
-                </div>
-                <div class="">
-                    <figure id="versus-image" class="container">
-                        <img src="./assets/paper.png" alt="paper">
-                    </figure>
-                </div>
-                <div class="">
-                    <figure id="versus-image" class="container">
-                        <img src="./assets/scissors.png" alt="scissors">
-                    </figure>
-                </div>
-            </div>
-            <div class="container columns" id="player-2-history">
-                <div class="">
-                    <figure id="versus-image" class="container">
-                        <img src="./assets/rock.png" alt="rock">
-                    </figure>
-                </div>
-                <div class="">
-                    <figure id="versus-image" class="container">
-                        <img src="./assets/rock.png" alt="rock">
-                    </figure>
-                </div>
-                <div class="">
-                    <figure id="versus-image" class="container">
-                        <img src="./assets/scissors.png" alt="scissors">
-                    </figure>
+        <div class="section">
+            <div class="container">
+                <div class="history-wrapper columns is-1 is-variable">
+                    <div class="columns is-1" id="player-1-history">
+                        <div class="column is-4-tablet is-3-desktop">
+                            <div>
+                                <figure id="versus-image" class="container">
+                                    <img src="./assets/paper.png" alt="paper">
+                                </figure>
+                            </div>
+                        </div>
+                        <div class="column is-4-tablet is-3-desktop">
+                            <figure id="versus-image" class="container">
+                                <img src="./assets/paper.png" alt="paper">
+                            </figure>
+                        </div>
+                        <div class="column is-4-tablet is-3-desktop">
+                            <div>
+                                <figure id="versus-image" class="container">
+                                    <img src="./assets/paper.png" alt="paper">
+                                </figure>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="columns is-1" id="player-2-history">
+                        <div class="column is-4-tablet is-3-desktop">
+                            <div>
+                                <figure id="versus-image" class="container">
+                                    <img src="./assets/paper.png" alt="paper">
+                                </figure>
+                            </div>
+                        </div>
+                        <div class="column is-4-tablet is-3-desktop">
+                            <div>
+                                <figure id="versus-image" class="container">
+                                    <img src="./assets/paper.png" alt="paper">
+                                </figure>
+                            </div>
+                        </div>
+                        <div class="column is-4-tablet is-3-desktop">
+                            <div>
+                                <figure id="versus-image" class="container">
+                                    <img src="./assets/paper.png" alt="paper">
+                                </figure>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
+
+
     </div>
 
     <!-- <canvas id="confetti"></canvas> for confetti to be added later -->
@@ -104,17 +123,13 @@
 
 <footer class="footer p-5" style="position: fixed; bottom: 0; width: 100%;">
     <div class="has-text-centered">
-        <pb>
-            <strong>RPS</strong> is a <strong>r</strong>ock, <strong>p</strong>aper, <strong>s</strong>cissors
-            project by paulo toureiro which has been designed for
-            you to have fun at
-            his expense. </br>
+        <p>
             Images courtesty of <strong><a target="_blank" href="https://www.flaticon.com/authors/flat-icons">Flat
                     icons</a></strong>
             &
             <strong>
                 <a href="https://www.flaticon.com/free-icons/vs" title="vs icons">iconfield.</a></a></strong>
-            </p>
+        </p>
     </div>
 </footer>
 
@@ -186,3 +201,9 @@
     <button id="play-btn" class="button is-primary is-outlined">Play!</button>
     <button id="reset-btn" class="button is-danger is-outlined">Reset!</button>
 </div> -->
+
+<!-- 
+<strong>RPS</strong> is a <strong>r</strong>ock, <strong>p</strong>aper, <strong>s</strong>cissors
+project by paulo toureiro which has been designed for
+you to have fun at
+his expense. </br> -->

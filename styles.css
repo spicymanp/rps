@@ -3,6 +3,10 @@
     max-width: 1200px !important; 
 }
 
+#header-container {
+    top: -60px;
+}
+
 .full-health-block {
     width: 18px; 
     height: 18px; 
@@ -31,8 +35,7 @@
 .game-topbar {
     display: flex; 
     justify-content: space-between; 
-    top: 20px; 
-    bottom: -30px;
+    
 }
 
 #player-1-details,  #player-2-details {
@@ -45,10 +48,11 @@
 }
 
 .history-wrapper {
-    width: 100%;    
-    top: 50px;
+    width: 100%;        
     display: flex;
     justify-content: space-between;    
+    /* border: 1px solid red; */
+    margin-top: -50px;
 }
 
 #player-1-history, #player-2-history {
@@ -56,16 +60,16 @@
     min-height: 96px;
     min-width: 303px;
     max-width: 303px;
+    /* border: 1px solid green; */
 }
 
 #player-1-history {
-    justify-content: flex-end;
-    left: -40px;
+/* something */
 }
 
 #player-2-history {
-    justify-content: flex-start;
-    right: -90px;
+    justify-content: end;  
+    margin-right: 30px;  
 }
 
 
