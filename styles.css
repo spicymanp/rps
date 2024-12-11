@@ -28,9 +28,7 @@
 }
 
 .p2 {
-    align-items: right; 
     justify-content: end; 
-    /* right: -25px; */
 }
 .game-topbar {
     width: 100%;
@@ -47,7 +45,9 @@
 
 #player-2-details {
     
-    /* something */
+    
+    
+    
 }
 
 .history-wrapper {
@@ -73,7 +73,7 @@ max-width: 80px;
 
 #player-2-history {
     justify-content: end;  
-    margin-right: 30px;  
+    margin-right: 0px;  
 }
 
 
